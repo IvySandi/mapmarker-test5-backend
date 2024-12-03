@@ -9,7 +9,12 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-  });
+  },
+    {
+      tableName: "groups",
+      freezeTableName: true,
+    }
+  );
 
   Group.associate = (models) => {
     Group.belongsToMany(models.Camera, {
